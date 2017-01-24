@@ -55,6 +55,7 @@ if [ -d sunxi-tools ]; then
 fi
 git clone http://github.com/linux-sunxi/sunxi-tools
 pushd sunxi-tools
+git checkout -b v1.4.2 v1.4.2
 make
 make misc
 SUNXI_TOOLS=(sunxi-bootinfo
@@ -62,8 +63,8 @@ sunxi-fel
 sunxi-fexc
 sunxi-nand-part
 sunxi-pio
-pheonix_info
-nand-image-builder)
+sunxi-nand-image-builder
+phoenix_info)
 for BIN in ${SUNXI_TOOLS[@]};do
   if [[ -L /usr/local/bin/${BIN} ]]; then
     sudo rm /usr/local/bin/${BIN}
