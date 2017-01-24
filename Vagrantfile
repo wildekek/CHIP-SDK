@@ -101,7 +101,7 @@ Vagrant.configure(2) do |config|
      # Git fails to clone the
      vb.memory = "1024"
      vb.customize ['modifyvm', :id, '--usb', 'on']
-     vb.customize ['modifyvm', :id, '--usbehci', 'on']
+     vb.customize ['modifyvm', :id, '--usbehci', 'off']
      unless which('VBoxManage').nil?
          better_usbfilter_add(vb, "18d1", "1010", "CHIP in fastboot mode")
          better_usbfilter_add(vb, "1f3a", "1010", "CHIP in fastboot mode")
